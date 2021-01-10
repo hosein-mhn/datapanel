@@ -11,25 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd736123-3ef5-4bd6-803a-1c3324c7dde0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_11_26_20__8_26_PM.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel sample.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/booklets.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/categories.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/edit_booklet.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/edit_category.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/edit_question.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/navbar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/new_pdf.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/new_question.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdfs.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/questions.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/videos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_01_172336_create_questions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_01_172336_create_questions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/edit_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/new_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/new_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdfs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdfs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/questions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/videos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/videos.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +192,8 @@
       <workItem from="1609575909822" duration="4277000" />
       <workItem from="1609582080579" duration="17463000" />
       <workItem from="1609610695810" duration="1769000" />
+      <workItem from="1610200866755" duration="4206000" />
+      <workItem from="1610263520191" duration="1151000" />
     </task>
     <servers />
   </component>

@@ -15,12 +15,12 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
-            $table->string('option1');
-            $table->string('option2');
-            $table->string('option3');
-            $table->string('option4');
-            $table->string('answer')->nullable();
+            $table->longText('description');
+            $table->longText('option1');
+            $table->longText('option2');
+            $table->longText('option3');
+            $table->longText('option4');
+            $table->longText('answer')->nullable();
             $table->tinyInteger('correct_option');
             $table->foreignId('category_id');
             $table->foreignId('user_id');

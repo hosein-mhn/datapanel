@@ -29,6 +29,7 @@
                             <th scope="col">#</th>
                             <th scope="col">عنوان</th>
                             <th scope="col">موضوع</th>
+                            <th scope="col">لینک</th>
                             <th scope="col">حذف</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                                 <th>{{$video->id}}</th>
                                 <td>{{$video->title}}</td>
                                 <td>{{$video->category->title}}</td>
+                                <td><a href="{{url('/').$video->url}}">دانلود</a></td>
                                 <td>
                                     <form action="{{ route('videos.destroy',$video->id) }}" method="post">
                                         <input class="btn btn-danger" type="submit" value="حذف"/>
