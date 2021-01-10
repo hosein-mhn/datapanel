@@ -37,7 +37,7 @@
                         @foreach($questions as $question)
                             <tr>
                                 <th>{{$question->id}}</th>
-                                <td>{{$question->description}}</td>
+                                <td>{!! $question->description !!}</td>
                                 <td>{{$question->category->title}}</td>
                                 <td>
                                     <form action="{{route('questions.destroy',$question->id)}}" method="post">

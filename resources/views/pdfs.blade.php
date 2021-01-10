@@ -29,6 +29,7 @@
                             <th scope="col">#</th>
                             <th scope="col">عنوان</th>
                             <th scope="col">موضوع</th>
+                            <th scope="col">لینک</th>
                             <th scope="col">حذف</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                                 <th>{{$pdf->id}}</th>
                                 <td>{{$pdf->title}}</td>
                                 <td>{{$pdf->category->title}}</td>
+                                <td><a href="{{url('/').$pdf->url}}">دانلود</a></td>
                                 <td>
                                     <form action="{{ route('pdfs.destroy',$pdf->id) }}" method="post">
                                         <input class="btn btn-danger" type="submit" value="حذف"/>
