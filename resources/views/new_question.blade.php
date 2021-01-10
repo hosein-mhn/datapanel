@@ -26,28 +26,28 @@
                     @csrf
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">سوال</label>
-                    <input type="text" name="description" class="form-control" id="exampleFormControlInput1">
+                    <textarea name="description" class="form-control" id="exampleFormControlInput1"></textarea>
                 </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">گزینه ۱</label>
-                        <input type="text" name="option1" class="form-control" id="exampleFormControlInput1">
+                        <textarea name="option1" class="form-control" id="exampleFormControlInput1"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">گزینه ۲</label>
-                        <input type="text" name="option2" class="form-control" id="exampleFormControlInput1">
+                        <textarea name="option2" class="form-control" id="exampleFormControlInput1"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">گزینه ۳</label>
-                        <input type="text" name="option3" class="form-control" id="exampleFormControlInput1">
+                        <textarea name="option3" class="form-control" id="exampleFormControlInput1"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">گزینه ۴</label>
-                        <input type="text" name="option4" class="form-control" id="exampleFormControlInput1">
+                        <textarea name="option4" class="form-control" id="exampleFormControlInput1"></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">پاسخ تشحریحی</label>
-                        <input type="text" name="answer" class="form-control" id="exampleFormControlInput1">
+                        <textarea name="answer" class="form-control" id="exampleFormControlInput1"></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -74,5 +74,19 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'description' );
+    CKEDITOR.replace( 'option1' );
+    CKEDITOR.replace( 'option2' );
+    CKEDITOR.replace( 'option3' );
+    CKEDITOR.replace( 'option4' );
+    CKEDITOR.replace( 'answer' );
+</script>
 </body>
+
 </html>
