@@ -43,6 +43,18 @@
                     <label for="exampleFormControlInput1" class="form-label">توضیحات</label>
                     <input type="text" name="description" class="form-control" id="exampleFormControlInput1">
                 </div>
+ <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"> part_number   </label>
+                    <input type="number" name="part" class="form-control" id="exampleFormControlInput1">
+                </div>
+ <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">start_page</label>
+                    <input type="number" name="start_page" class="form-control" id="exampleFormControlInput1">
+                </div>
+ <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"�>end_page</label>
+                    <input type="number" name="end_page" class="form-control" id="exampleFormControlInput1">
+                </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">درس</label>
                     <select name="lesson_id" type="number" class="form-control">

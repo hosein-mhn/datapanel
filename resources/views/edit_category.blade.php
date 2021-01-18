@@ -36,6 +36,18 @@
                 <div class="mb-3">
                     <input type="hidden" name="lesson_id" class="form-control" id="exampleFormControlInput1" value="{{$category->lesson_id}}">
                 </div>
+			 <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"> part_number   </label>
+                    <input type="number" name="part" class="form-control" id="exampleFormControlInput1" value="{{$category->part}}">
+                </div>
+ <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">start_page</label>
+                    <input type="number" name="start_page" class="form-control" id="exampleFormControlInput1" value="{{$category->start_page}}">
+                </div>
+ <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label" >end_page</label>
+                    <input type="number" name="end_page" class="form-control" id="exampleFormControlInput1" value="{{$category->end_page}}">
+                </div>
                     <input type="submit"  value="ذخیره" class="btn btn-success">
                 </form>
             </div>

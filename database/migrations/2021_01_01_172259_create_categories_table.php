@@ -17,6 +17,9 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+	$table->integer('part');
+$table->integer('start_page');
+$table->integer('end_page');
             $table->foreignId('user_id');
             $table->foreignId('lesson_id');
             $table->timestamps();
