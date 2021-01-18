@@ -33,42 +33,42 @@
                         </div>
                     @endif
 
-                <form method="post" action="{{route('categories.store')}}">
-                    @csrf
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">عنوان</label>
-                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
+                    <form method="post" action="{{route('categories.store')}}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">عنوان</label>
+                            <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">توضیحات</label>
+                            <input type="text" name="description" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">شماره بخش</label>
+                            <input type="number" name="part" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">صفحه شروع</label>
+                            <input type="number" name="start_page" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">صفحه پایان</label>
+                            <input type="number" name="end_page" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">درس</label>
+                            <select name="lesson_id" type="number" class="form-control">
+                                @foreach($lessons as $category)
+                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach()
+                            </select>
+                        </div>
+                        <input type="submit" value="ذخیره" class="btn btn-success">
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">توضیحات</label>
-                    <input type="text" name="description" class="form-control" id="exampleFormControlInput1">
-                </div>
- <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"> part_number   </label>
-                    <input type="number" name="part" class="form-control" id="exampleFormControlInput1">
-                </div>
- <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">start_page</label>
-                    <input type="number" name="start_page" class="form-control" id="exampleFormControlInput1">
-                </div>
- <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"�>end_page</label>
-                    <input type="number" name="end_page" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">درس</label>
-                    <select name="lesson_id" type="number" class="form-control">
-                        @foreach($lessons as $category)
-                            <option value="{{$category->id}}">{{$category->title}}</option>
-                        @endforeach()
-                    </select>
-                </div>
-                    <input type="submit" value="ذخیره" class="btn btn-success">
-                </form>
             </div>
         </div>
     </div>
-    </div>
-    </div>
+</div>
 </body>
 </html>

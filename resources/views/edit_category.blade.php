@@ -22,38 +22,38 @@
                     <h4> ویرایش موضوع</h4>
                 </div>
                 <div class="card-body">
-                <form method="post" action="{{route('categories.update',$category->id)}}">
-                    {!! method_field('put') !!}
-                    @csrf
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">عنوان</label>
-                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{$category->title}}">
+                    <form method="post" action="{{route('categories.update',$category->id)}}">
+                        {!! method_field('put') !!}
+                        @csrf
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">عنوان</label>
+                            <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{$category->title}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">توضیحات</label>
+                            <input type="text" name="description" class="form-control" id="exampleFormControlInput1" value="{{$category->description}}">
+                        </div>
+                        <div class="mb-3">
+                            <input type="hidden" name="lesson_id" class="form-control" id="exampleFormControlInput1" value="{{$category->lesson_id}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label"> شماره بخش</label>
+                            <input type="number" name="part" class="form-control" id="exampleFormControlInput1" value="{{$category->part}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">صفحه شروع</label>
+                            <input type="number" name="start_page" class="form-control" id="exampleFormControlInput1" value="{{$category->start_page}}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label" >صفحه پایان</label>
+                            <input type="number" name="end_page" class="form-control" id="exampleFormControlInput1" value="{{$category->end_page}}" required>
+                        </div>
+                        <input type="submit"  value="ذخیره" class="btn btn-success">
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">توضیحات</label>
-                    <input type="text" name="description" class="form-control" id="exampleFormControlInput1" value="{{$category->description}}">
-                </div>
-                <div class="mb-3">
-                    <input type="hidden" name="lesson_id" class="form-control" id="exampleFormControlInput1" value="{{$category->lesson_id}}">
-                </div>
-			 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"> part_number   </label>
-                    <input type="number" name="part" class="form-control" id="exampleFormControlInput1" value="{{$category->part}}">
-                </div>
- <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">start_page</label>
-                    <input type="number" name="start_page" class="form-control" id="exampleFormControlInput1" value="{{$category->start_page}}">
-                </div>
- <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label" >end_page</label>
-                    <input type="number" name="end_page" class="form-control" id="exampleFormControlInput1" value="{{$category->end_page}}">
-                </div>
-                    <input type="submit"  value="ذخیره" class="btn btn-success">
-                </form>
             </div>
         </div>
     </div>
-    </div>
-    </div>
+</div>
 </body>
 </html>

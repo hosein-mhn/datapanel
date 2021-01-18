@@ -30,8 +30,9 @@
                             <th scope="col">#</th>
                             <th scope="col">عنوان</th>
                             <th scope="col">موضوع</th>
+                            <th scope="col">لینک</th>
                             <th scope="col">حذف</th>
-                            <th scope="col">ویرایش</th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -40,6 +41,7 @@
                                 <th>{{$booklet->id}}</th>
                                 <td>{{$booklet->title}}</td>
                                 <td>{{$booklet->category_id}}</td>
+                                <td><a href="{{url('/').$booklet->data}}">دانلود</a></td>
                                 <td>
                                     <form action="{{ route('booklets.destroy',$booklet->id) }}" method="post">
                                         <input class="btn btn-danger" type="submit" value="حذف"/>
@@ -47,10 +49,6 @@
                                         {!! csrf_field() !!}
                                     </form>
 
-                                </td>
-                                <td>
-                                    <a href="{{route('booklets.edit',$booklet->id)}}" class="btn btn-primary"
-                                       type="submit">ویرایش</a>
                                 </td>
                             </tr>
                         @endforeach

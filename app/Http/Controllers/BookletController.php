@@ -41,14 +41,21 @@ class BookletController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'data' => 'required',
-            'title' => 'required',
-            'category_id' => 'required',
+            'file' => 'required',
         ]);
 
-        $request->request->add(['user_id' => auth()->user()->id]);
-        Booklet::create($request->all());
-        return redirect()->route('booklets.index');
+        $title = time().'.'.request()->file->getClientOriginalExtension();
+
+        $request->file->move(public_path('posts'), $title);
+
+        $storeFile = new Booklet;
+        $storeFile->title = $request->title;
+        $storeFile->data = '/posts/'.$title;
+        $storeFile->category_id = $request->category_id;
+        $storeFile->user_id = auth()->user()->id;
+        $storeFile->save();
+
+        return response()->json(['success'=>'File Uploaded Successfully']);
     }
 
     /**
@@ -71,8 +78,6 @@ class BookletController extends Controller
     public function edit($booklet)
     {
 
-        $booklet = Booklet::with('category')->where('id',$booklet)->first();
-        return view('edit_booklet',['booklet' => $booklet]);
     }
 
     /**
@@ -84,15 +89,6 @@ class BookletController extends Controller
      */
     public function update(Request $request, Booklet $booklet)
     {
-
-        $request->validate([
-            'data' => 'required',
-            'title' => 'required',
-            'category_id' => 'required',
-        ]);
-
-        $booklet->update($request->all());
-        return redirect()->route('booklets.index');
     }
 
     /**

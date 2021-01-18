@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+    <style>
+        .progress {
+            position: relative;
+            width: 100%;
+        }
+
+        .bar {
+            background-color: #00ff00;
+            width: 0%;
+            height: 20px;
+        }
+
+        .percent {
+            position: absolute;
+            display: inline-block;
+            left: 50%;
+            color: #040608;
+        }
+    </style>
     <link href='http://www.fontonline.ir/css/BYekan.css' rel='stylesheet' type='text/css'>
     <style>
         *{
@@ -19,51 +40,60 @@
         <div class="col-md-8 offset-md-2">
             <div class="card">
                 <div class="card-header text-center">
-                    <h4>ساخت جزوه جدید</h4>
+                    <h4>جزوه جدید</h4>
                 </div>
                 <div class="card-body">
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                    <form method="post" action="{{route('booklets.store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label class="form-label">عنوان</label>
+                            <input name="title" type="text" class="form-control" required><br/>
+                            <label class="form-label">موضوع</label>
+                            <select name="category_id" type="number" class="form-control">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach()
+                            </select>
+                            <br/>
+                            <input name="file" type="file" class="form-control" required><br/>
+                            <div class="progress">
+                                <div class="bar"></div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <br>
+                            <input type="submit" value="ذخیره" class="btn btn-primary">
                         </div>
-                    @endif
-
-                <form method="post" enctype="multipart/form-data" action="{{route('booklets.store')}}">
-                    @csrf
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">عنوان</label>
-                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">متن</label>
-                    <textarea  name="data" class="form-control" id="editor"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">موضوع</label>
-                    <select name="category_id" type="number" class="form-control">
-                        @foreach($categories as $category)
-                            <option value="{{$category->id}}">{{$category->title}}</option>
-                        @endforeach()
-                    </select>
-                </div>
-                    <input type="submit" value="ذخیره" class="btn btn-success">
-                </form>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace( 'data' );
+<script type="text/javascript">
+    var SITEURL = "{{URL('/')}}";
+    $(function () {
+        $(document).ready(function () {
+            var bar = $('.bar');
+            var percent = $('.percent');
+            $('form').ajaxForm({
+                beforeSend: function () {
+                    var percentVal = '0%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                uploadProgress: function (event, position, total, percentComplete) {
+                    var percentVal = percentComplete + '%';
+                    bar.width(percentVal)
+                    percent.html(percentVal);
+                },
+                complete: function (xhr) {
+                    alert('File Has Been Uploaded Successfully');
+                    window.location.href = SITEURL + "/" + "booklets";
+                }
+            });
+        });
+    });
 </script>
+</body>
+
 </html>
